@@ -28,4 +28,4 @@ EXPOSE 3000
 ENV HOST=0.0.0.0
 ENV PORT=3000
 ENV ORIGIN=https://dtek.codegrotto.dev
-CMD ["node", "build"]
+ENTRYPOINT ["node", "build"]
