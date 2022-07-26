@@ -1,23 +1,26 @@
 # syntax=docker/dockerfile:1
-FROM docker.io/node:18-alpine AS build
-WORKDIR /app
-
+FROM docker.io/node:18-alpine AS pnpm
 RUN wget https://get.pnpm.io/v6.16.js -qO - | node - add --global pnpm@7
 
-COPY pnpm-lock.yaml ./
 
+FROM pnpm AS deps
+WORKDIR /app
+COPY pnpm-lock.yaml ./
 RUN pnpm fetch
+
+FROM pnpm AS deps-prod
+COPY pnpm-lock.yaml ./
+RUN pnpm fetch --prod
+
+FROM deps AS build
+
 ADD . ./
 RUN pnpm install --offline
 RUN pnpm run build
 
-RUN rm -rf node_modules
-
-RUN pnpm install --prod --ignore-scripts --frozen-lockfile
-
 FROM gcr.io/distroless/nodejs:18
 
-COPY --from=build /app/node_modules ./
+COPY --from=deps-prod /node_modules ./
 COPY --from=build /app/build ./
 COPY --from=build /app/package.json .
 
