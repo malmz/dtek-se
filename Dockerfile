@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM docker.io/node:18-alpine AS pnpm
+FROM docker.io/node:18 AS pnpm
 RUN wget https://get.pnpm.io/v6.16.js -qO - | node - add --global pnpm@7
 
 
