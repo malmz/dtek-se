@@ -1,0 +1,13 @@
+.ProseMirror {
+	outline: none;
+}
+
+.ProseMirror .is-empty:first-child:before {
+	@apply text-zinc-400 h-0 float-left pointer-events-none;
+	content: attr(data-placeholder);
+}
+
+.ProseMirror .is-empty:nth-child(2):before {
+	@apply text-zinc-400 h-0 float-left pointer-events-none;
+	content: attr(data-placeholder);
+}

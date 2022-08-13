@@ -1,0 +1,13 @@
+@layer components {
+	.btn {
+		@apply inline-block rounded-md px-4 py-3 text-sm font-medium bg-gray-800 text-white;
+	}
+
+	.btn-blue {
+		@apply bg-blue-500 hover:bg-blue-700;
+	}
+
+	.btn-primary {
+		@apply btn-blue;
+	}
+}
