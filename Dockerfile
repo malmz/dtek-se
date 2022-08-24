@@ -4,6 +4,7 @@ WORKDIR /app
 ENV VITE_API_URL=api.codegrotto.dev
 
 COPY package*.json ./
+COPY svelte.config.js ./
 RUN npm ci
 ADD . ./
 RUN npm run build

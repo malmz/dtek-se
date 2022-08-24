@@ -1,4 +1,4 @@
-import { req, type ApiResponse, type FetchFunction } from './fetch';
+import { req, type FetchFunction } from './fetch';
 
 export interface LunchMenuItem {
 	title?: string;

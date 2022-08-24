@@ -1,15 +1,14 @@
-import { fetchTodaysLunch, type LunchMenu } from '$lib/api/lunch';
+import { getLunch, type LunchMenu } from '$lib/api/lunch';
 import type { RequestHandler } from './__types/today';
 
-export const GET: RequestHandler<{ express?: LunchMenu }> = async () => {
+export const GET: RequestHandler<{ menu?: LunchMenu[] }> = async () => {
 	try {
-		const data = await fetchTodaysLunch('johanneberg-express');
-		console.log(data);
+		const data = await getLunch({ resturants: ['johanneberg-express'] });
 
 		return {
 			status: 200,
 			body: {
-				express: data
+				menu: data
 			}
 		};
 	} catch (error) {
@@ -17,7 +16,7 @@ export const GET: RequestHandler<{ express?: LunchMenu }> = async () => {
 		return {
 			status: 200,
 			body: {
-				express: undefined
+				menu: []
 			}
 		};
 	}
