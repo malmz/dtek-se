@@ -1,25 +1,19 @@
 import { getLunch, type LunchMenu } from '$lib/api/lunch';
-import type { RequestHandler } from './__types';
+import type { PageServerLoad } from './$types';
 
-export const GET: RequestHandler<{ menus: LunchMenu[] }> = async () => {
+export const load: PageServerLoad = async () => {
 	try {
 		const menus = await getLunch({
 			resturants: ['johanneberg-express', 'karresturangen']
 		});
 
 		return {
-			status: 200,
-			body: {
-				menus
-			}
+			menus
 		};
 	} catch (error) {
 		console.error(error);
 		return {
-			status: 200,
-			body: {
-				menus: []
-			}
+			menus: []
 		};
 	}
 };

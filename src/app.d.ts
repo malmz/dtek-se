@@ -5,7 +5,10 @@
 // and what to do when importing types
 declare namespace App {
 	interface Locals {
-		userid: string;
+		session: import('svelte-kit-cookie-session').Session<
+			import('$lib/auth').SessionData
+		>;
+		cookies: Record<string, string>;
 	}
 
 	// interface Platform {}

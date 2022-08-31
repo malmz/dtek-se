@@ -1,7 +1,10 @@
-import type { Handle } from '@sveltejs/kit';
-import * as cookie from 'cookie';
+import { handleSession } from 'svelte-kit-cookie-session';
 
-export const handle: Handle = async ({ event, resolve }) => {
+export const handle = handleSession({
+	secret: import.meta.env.VITE_SESSION_SECRET
+});
+
+/* export const handle: Handle = async ({ event, resolve }) => {
 	const cookies = cookie.parse(event.request.headers.get('cookie') || '');
 	event.locals.userid = cookies['userid'] || crypto.randomUUID();
 
@@ -20,4 +23,4 @@ export const handle: Handle = async ({ event, resolve }) => {
 	}
 
 	return response;
-};
+}; */
