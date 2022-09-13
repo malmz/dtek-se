@@ -1,8 +1,8 @@
 import { handleSession } from 'svelte-kit-cookie-session';
 
-export const handle = handleSession({
+/* export const handle = handleSession({
 	secret: import.meta.env.VITE_SESSION_SECRET
-});
+}); */
 
 /* export const handle: Handle = async ({ event, resolve }) => {
 	const cookies = cookie.parse(event.request.headers.get('cookie') || '');

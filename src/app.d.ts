@@ -5,9 +5,7 @@
 // and what to do when importing types
 declare namespace App {
 	interface Locals {
-		session: import('svelte-kit-cookie-session').Session<
-			import('$lib/auth').SessionData
-		>;
+		session: import('@ory/kratos-client').Session;
 		cookies: Record<string, string>;
 	}
 

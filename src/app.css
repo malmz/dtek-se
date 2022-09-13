@@ -3,6 +3,7 @@
 @import url('https://rsms.me/inter/inter.css');
 @import './lib/styles/forms.css';
 @import './lib/styles/button.css';
+@import './lib/styles/misc.css';
 
 @tailwind base;
 

@@ -3,11 +3,19 @@
 		@apply block mb-2 text-sm font-medium text-gray-900;
 	}
 
+	.input[type='email'] {
+		@apply px-4 py-3 block rounded-md text-sm focus:ring-blue-500 focus:border-blue-500  border-gray-300 text-gray-900;
+	}
+
 	.input[type='text'] {
-		@apply px-4 py-3 block rounded-md text-sm focus:ring-blue-500 focus:border-blue-500 bg-gray-50 border-gray-300 text-gray-900;
+		@apply px-4 py-3 block rounded-md text-sm focus:ring-blue-500 focus:border-blue-500  border-gray-300 text-gray-900;
+	}
+
+	.input[type='password'] {
+		@apply px-4 py-3 block rounded-md text-sm focus:ring-blue-500 focus:border-blue-500  border-gray-300 text-gray-900;
 	}
 
 	.textarea {
-		@apply px-4 py-3 block rounded-md text-sm focus:ring-blue-500 focus:border-blue-500 bg-gray-50 border-gray-300 text-gray-900;
+		@apply px-4 py-3 block rounded-md text-sm focus:ring-blue-500 focus:border-blue-500  border-gray-300 text-gray-900;
 	}
 }

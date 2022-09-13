@@ -13,6 +13,7 @@
 	},
 	"devDependencies": {
 		"@logto/js": "1.0.0-beta.2",
+		"@ory/kratos-client": "0.0.0-next.a36dda23f209",
 		"@sveltejs/adapter-node": "1.0.0-next.85",
 		"@sveltejs/kit": "next",
 		"@tailwindcss/forms": "^0.5.2",
@@ -21,6 +22,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.31.0",
 		"@typescript-eslint/parser": "^5.31.0",
 		"autoprefixer": "^10.4.7",
+		"axios": "^0.27.2",
 		"eslint": "^8.20.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
