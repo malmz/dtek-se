@@ -4,7 +4,7 @@ export interface LunchMenuItem {
 	title?: string;
 	body: string;
 	preformatted: boolean;
-	allergens?: { code: string; imageUrl: string }[];
+	allergen: { code: string; imageUrl: string }[];
 	emmissions?: number;
 	price?: string;
 }

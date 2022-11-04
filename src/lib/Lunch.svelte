@@ -7,12 +7,17 @@
 	export let menu: LunchMenu;
 </script>
 
-<div>
-	<h2 class="text-lg font-semibold">{menu.name}</h2>
-	<div class="my-1">
+<div class="bg-rose-50 p-4">
+	<h2 class="text-xl font-bold mb-3">{menu.name}</h2>
+	<div class="">
 		{#each menu.items as item}
-			<h3 class="text-lg">{item.title}</h3>
-			<p>{item.body}</p>
+			<div class="mb-4">
+				<h3 class="text-base font-semibold mb-1">{item.title}</h3>
+				<p class="ml-1">{item.body}</p>
+				<p class="ml-1 flex gap-1 text-gray-600">
+					<span>Contains: {item.allergen.map(({code}) => code).join(', ')}</span>
+				</p>
+			</div>
 		{:else}
 			<p>Ingen lunch idag</p>
 		{/each}

@@ -5,8 +5,11 @@
 // and what to do when importing types
 declare namespace App {
 	interface Locals {
-		session: import('@ory/kratos-client').Session;
+		session: import('svelte-kit-cookie-session').Session<
+			import('./session').SessionData
+		>;
 		cookies: Record<string, string>;
+		dtek: import('$lib/client').DtekClient;
 	}
 
 	// interface Platform {}

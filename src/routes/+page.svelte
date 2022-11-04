@@ -3,8 +3,6 @@
 	import Lunch from '$lib/Lunch.svelte';
 	import type { PageData } from './$types';
 
-	import { page } from '$app/stores';
-
 	export let data: PageData;
 </script>
 
@@ -15,10 +13,10 @@
 
 <header>
 	<nav class="flex justify-end px-8 pt-8">
-		{#if $page.data.session}
+		{#if data.tokens}
 			<a href="/profile" class="text-lg font-bold">Profile &rightarrow;</a>
 		{:else}
-			<a href="/auth/login" class="text-lg font-bold">Login &rightarrow;</a>
+			<a href="/auth/sign-in" class="text-lg font-bold">Login &rightarrow;</a>
 		{/if}
 	</nav>
 </header>
@@ -35,7 +33,7 @@
 	<div>
 		<nav class="flex gap-4">
 			<a href="/news/create">Compose news</a>
-			{#if $page.data.session}
+			{#if data.tokens}
 				<a href="/profile">Profile</a>
 			{:else}
 				<a href="/auth/login">Login</a>
@@ -58,16 +56,18 @@
 </section> -->
 
 <section class="section">
-	<div class="section-body">
+	<dir class="section-body">
 		<h1 class="section-title">Dagens Lunch</h1>
-		<div class="flex flex-wrap gap-6 justify-around sm:justify-start">
+		<div class="flex flex-row flex-wrap gap-6 justify-around sm:justify-start">
 			{#each data.menus as menu}
-				<Lunch {menu} />
+				<div class="">
+					<Lunch {menu} />
+				</div>
 			{:else}
 				<span>Kunde inte hämta lunchmenyn.</span>
 			{/each}
 		</div>
-	</div>
+	</dir>
 </section>
 
 <section class="section">

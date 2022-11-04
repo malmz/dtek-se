@@ -1,7 +1,7 @@
 import { getLunch, type LunchMenu } from '$lib/api/lunch';
 import type { PageServerLoad } from './$types';
 
-export const GET: PageServerLoad = async () => {
+export const load: PageServerLoad = async () => {
 	try {
 		const data = await getLunch({ resturants: ['johanneberg-express'] });
 

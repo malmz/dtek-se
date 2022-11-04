@@ -3,7 +3,6 @@
 	import Avatar from '$lib/Avatar.svelte';
 	import type { PageData } from './$types';
 
-	$: traits = $page.data.session.identity.traits;
 	export let data: PageData;
 </script>
 
@@ -15,11 +14,11 @@
 	class="max-w-lg mx-auto sm:border border-black p-8 flex flex-col items-center"
 >
 	<div class="mb-6">
-		<Avatar src="" />
+		<Avatar src={data.user.avatar ?? ''} />
 	</div>
 
-	<p class="text-xl font-bold">{traits.name.first} {traits.name.last}</p>
-	<p>{traits.email}</p>
+	<p class="text-xl font-bold">{data.user.name}</p>
 
-	<a href={data.logoutFlow.logout_url}>Logout</a>
+	<!-- 	<a href={data.logoutFlow.logout_url}>Logout</a>
+ -->
 </div>

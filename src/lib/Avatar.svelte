@@ -2,9 +2,9 @@
 	export let src: string;
 </script>
 
-<div class="border-4 border-black rounded-full p-4">
+<div class="border-4 border-orange-700 rounded-full">
 	{#if src}
-		<img {src} alt="user avatar" class="w-24 h-24" />
+		<img {src} alt="user avatar" class="w-24 h-24 object-cover rounded-full" />
 	{:else}
 		<svg
 			xmlns="http://www.w3.org/2000/svg"

@@ -14,6 +14,7 @@
 	"devDependencies": {
 		"@logto/js": "1.0.0-beta.2",
 		"@ory/kratos-client": "0.0.0-next.a36dda23f209",
+		"@panva/oauth4webapi": "^1.1.4",
 		"@sveltejs/adapter-node": "1.0.0-next.85",
 		"@sveltejs/kit": "next",
 		"@tailwindcss/forms": "^0.5.2",
@@ -27,6 +28,7 @@
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"js-base64": "^3.7.2",
+		"pocketbase": "^0.7.1",
 		"postcss": "^8.4.14",
 		"postcss-load-config": "^4.0.1",
 		"prettier": "^2.7.1",
