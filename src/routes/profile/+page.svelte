@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import Avatar from '$lib/Avatar.svelte';
+	import Avatar from '$lib/components/Avatar.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;

@@ -1,6 +1,7 @@
 /* Write your global styles here, in PostCSS syntax */
 
-@import url('https://rsms.me/inter/inter.css');
+@import "inter-ui/inter.css";
+
 @import './lib/styles/forms.css';
 @import './lib/styles/button.css';
 @import './lib/styles/misc.css';

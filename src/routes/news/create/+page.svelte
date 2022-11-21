@@ -1,24 +1,11 @@
 <script lang="ts">
-import { goto } from '$app/navigation';
-
-import { createNews } from '$lib/api/news';
-
-import { createForm } from 'felte';
-
-
-	const {form} = createForm<{title: string, body: string}>({
-		onSubmit: async (data) => {
-			const res = await createNews(data);
-			console.log(res);
-			goto(`/${res.id}`)
-		}
-	});
+	import { goto } from '$app/navigation';
 </script>
 
 <div class="max-w-3xl mx-auto my-12">
 	<h1 class="text-4xl font-bold mb-12">Create a new post</h1>
 
-	<form use:form class="flex flex-col gap-4">
+	<form method="post" class="flex flex-col gap-4">
 		<div class="form-control">
 			<label for="title" class="label">Title</label>
 			<input

@@ -1,12 +1,13 @@
+import { env } from '$env/dynamic/private';
 import * as oauth from '@panva/oauth4webapi';
 import type { TokenState } from './api';
 
-const issuer = new URL(import.meta.env.VITE_AUTH_URL);
-const redirect_uri = import.meta.env.VITE_AUTH_REDIRECT_URI;
+const issuer = new URL(env.AUTH_URL);
+const redirect_uri = env.AUTH_REDIRECT_URI;
 
 const client: oauth.Client = {
-	client_id: import.meta.env.VITE_AUTH_CLIENT_ID,
-	client_secret: import.meta.env.VITE_AUTH_CLIENT_SECRET
+	client_id: env.AUTH_CLIENT_ID,
+	client_secret: env.AUTH_CLIENT_SECRET
 };
 
 async function getAuthServer(): Promise<oauth.AuthorizationServer> {

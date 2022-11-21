@@ -1,3 +1,4 @@
+import { env } from '$env/dynamic/private';
 import {
 	decodeIdToken,
 	discoveryPath,
@@ -14,10 +15,10 @@ import { fromUint8Array } from 'js-base64';
 import type { TokenState } from './api';
 
 const client = {
-	endpoint: import.meta.env.VITE_AUTH_URL,
-	clientId: import.meta.env.VITE_AUTH_CLIENT_ID,
-	clientSecret: import.meta.env.VITE_AUTH_CLIENT_SECRET,
-	redirectUri: import.meta.env.VITE_AUTH_REDIRECT_URI
+	endpoint: env.AUTH_URL,
+	clientId: env.AUTH_CLIENT_ID,
+	clientSecret: env.AUTH_CLIENT_SECRET,
+	redirectUri: env.AUTH_REDIRECT_URI
 };
 
 async function requester<T>(

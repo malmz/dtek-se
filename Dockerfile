@@ -1,25 +1,31 @@
-# syntax=docker/dockerfile:1
-FROM node:18-alpine as builder
+FROM node:18-alpine as deps
 WORKDIR /app
-ENV VITE_API_URL=api.codegrotto.dev
 
-COPY package*.json ./
-COPY svelte.config.js ./
-RUN npm ci
+RUN apk add --no-cache curl && \
+	curl -fsSL "https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-x64" -o /bin/pnpm; chmod +x /bin/pnpm
+
+RUN node -v && pnpm -v
+
+COPY pnpm-lock.yaml ./
+RUN pnpm fetch
+
+FROM deps as builder
+
 ADD . ./
-RUN npm run build
+RUN pnpm install --offline
 
-FROM node:18-alpine
+RUN pnpm run build
+
+FROM deps
 WORKDIR /app
-ENV NODE_ENV=production
-
-COPY --from=builder /app/build ./build
-COPY --from=builder /app/package*.json ./
-
-RUN npm install
-
 EXPOSE 3000
+ENV NODE_ENV=production
 ENV HOST=0.0.0.0
 ENV PORT=3000
-ENV ORIGIN=https://dtek.codegrotto.dev
+
+COPY --from=builder /app/build ./build
+COPY --from=builder /app/package.json ./
+
+RUN pnpm install --offline --dev
+
 CMD ["node", "build"]

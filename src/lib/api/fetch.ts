@@ -1,3 +1,5 @@
+import { env } from '$env/dynamic/private';
+
 export type FetchFunction = (
 	info: RequestInfo,
 	init?: RequestInit
@@ -46,7 +48,7 @@ export async function req<T>({
 	body,
 	fetch
 }: ReqProps): Promise<T> {
-	const u = `${import.meta.env.VITE_API_URL}${url}${createParams(params)}`;
+	const u = `${env.API_URL}${url}${createParams(params)}`;
 
 	const f = fetch ?? globalThis.fetch;
 
