@@ -1,5 +1,5 @@
 import type { LunchMenu } from '$lib/api/lunch';
-import { resource } from '$lib/req';
+import { resource } from '$lib/api';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ fetch }) => {
