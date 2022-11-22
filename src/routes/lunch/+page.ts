@@ -1,19 +1,26 @@
-import type { LunchMenu } from '$lib/api/lunch';
+import type { LunchMenu } from '$lib/api/types';
 import { resource } from '$lib/api';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ fetch }) => {
-	const data = await resource<LunchMenu[]>(
-		fetch,
-		'/lunch',
-		{
-			resturant: 'johanneberg-express',
-			lang: 'se'
-		},
-		[]
-	);
+	const resturants = ['johanneberg-express', 'karresturangen', 'hyllan', 'smak', 'linsen'];
+
+	const menus = (
+		await resource<LunchMenu[]>(
+			fetch,
+			'/lunch',
+			{
+				resturant: resturants,
+				lang: 'se'
+			},
+			[]
+		)
+	).map((menu, i) => ({
+		...menu,
+		id: resturants[i]
+	}));
 
 	return {
-		menus: data
+		menus
 	};
 };

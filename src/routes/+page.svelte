@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Committees from '$lib/components/Committees.svelte';
 	import Lunch from '$lib/components/Lunch.svelte';
 	import Nav from '$lib/components/Nav.svelte';
 	import Section from '$lib/components/Section.svelte';
@@ -7,27 +6,6 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-
-	/* 	const logos = [
-		'd6.png',
-		'dag.png',
-		'dbrus.jpg',
-		'dbus.png',
-		'delta.png',
-		'dfoto.png',
-		'dhack.svg',
-		'dkock.png',
-		'dlirium.png',
-		'dlude.png',
-		'dmnollk.jpg',
-		'dnollk.png',
-		'dns.png',
-		'drust.png',
-		'idrott.png',
-		'jamnstalld.png',
-		'stat.png',
-		'styret.png'
-	].map((url) => `/images/committees/${url}`); */
 </script>
 
 <svelte:head>
@@ -73,7 +51,7 @@
 </Section>
 
 <Section title="Dagens Lunch">
-	<div class="flex flex-row flex-wrap gap-6 justify-around sm:justify-start">
+	<div class="flex flex-col gap-6">
 		{#each data.menus as menu}
 			<a href={`/lunch/${menu.id}`} class="p-3 bg-orange-100 rounded-lg">
 				<Lunch {menu} />

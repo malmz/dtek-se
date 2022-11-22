@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { LunchMenu } from '$lib/api/lunch';
 	import Lunch from '$lib/components/Lunch.svelte';
 	import Section from '$lib/components/Section.svelte';
 	import type { PageData } from './$types';

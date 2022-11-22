@@ -14,7 +14,7 @@
 <a href="/">← Home</a>
 
 <Section title="Dagens lunch">
-	<div class="flex flex-row flex-wrap gap-6 justify-around sm:justify-start">
+	<div class="flex flex-col gap-6">
 		{#each data.menus as menu}
 			<a href={`/lunch/${menu.id}`} class="p-3 bg-orange-100 rounded-lg">
 				<Lunch {menu} />
