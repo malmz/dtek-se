@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 </script>
 
 <div class="max-w-3xl mx-auto my-12">

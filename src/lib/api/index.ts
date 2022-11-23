@@ -43,6 +43,20 @@ export async function resource<T>(
 	}
 }
 
-export async function modify<T>() {
-	// TODO
+export async function modify<T, U>(
+	fetch: typeof globalThis.fetch,
+	url: string,
+	body: T
+): Promise<U> {
+	const resp = await fetch(`${env.PUBLIC_API_URL}${url}`, {
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(body)
+	});
+	const data = await resp.json();
+	if (data.error) {
+		throw new Error(data.message);
+	}
+	return data as U;
 }
