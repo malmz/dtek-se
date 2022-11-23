@@ -8,6 +8,7 @@ export interface LunchMenuItem {
 }
 
 export interface LunchMenu {
+	resturant: string;
 	name: string;
 	fetched_at: string;
 	items: LunchMenuItem[];

@@ -23,18 +23,6 @@
 	</nav>
 </header> -->
 
-<section class="flex flex-col items-center gap-4 h-72 justify-center mb-6 mt-8 px-4">
-	<img class="w-24 h-24" src="images/logo.svg" alt="Logo" />
-	<h1
-		class="flex flex-wrap justify-center text-5xl md:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-r from-orange-300 to-red-300 py-2"
-	>
-		<span>Datateknolog</span><span>sektionen</span>
-	</h1>
-	<div class="mt-4">
-		<Nav />
-	</div>
-</section>
-
 <Section>
 	<div class="space-y-4">
 		<p class="lg:text-xl">
@@ -53,7 +41,7 @@
 <Section title="Dagens Lunch">
 	<div class="flex flex-col gap-6">
 		{#each data.menus as menu}
-			<a href={`/lunch/${menu.id}`} class="p-3 bg-orange-100 rounded-lg">
+			<a href={`/lunch/${menu.id}`} class="p-3 bg-zinc-100 rounded-lg">
 				<Lunch {menu} />
 			</a>
 		{:else}
@@ -67,7 +55,7 @@
 		Lär känna alla underbara studentstyrda kommittéer som hjälper till att förbättra kvaliteten på
 		din utbildning när du studerar och tillför mycket roligt när du inte gör det det.
 	</p>
-	<div class="flex flex-wrap gap-2 justify-center p-8">
+	<div class="flex flex-wrap gap-2 justify-center p-8 max-w-lg mx-auto">
 		{#each logos as logo}
 			<img
 				loading="lazy"
@@ -86,8 +74,8 @@
 </Section>
 
 <Section title="Sponsrade av">
-	<div class="flex flex-col gap-12">
-		<div class="flex flex-col gap-4 justify-center">
+	<div class="flex flex-col gap-12 mt-6">
+		<div class="flex flex-col sm:flex-row gap-8 justify-center">
 			<img height="48" class="h-12 object-contain" src="images/cpac.png" alt="CPAC" />
 			<img height="48" class="h-12 object-contain" src="images/saab.svg" alt="SAAB" />
 		</div>
@@ -102,7 +90,3 @@
 		</div>
 	</div>
 </Section>
-
-<footer class="p-4 bg-orange-100">
-	<p>Made with 🧡 by <a href="https://wiki.dtek.se/wiki/User:Cral" class="underline">Cral</a></p>
-</footer>

@@ -1,16 +1,20 @@
 <nav>
 	<ul class="flex gap-2 sm:gap-4">
 		<li>
-			<a href="/news" class="bg-orange-200 px-4 py-2 rounded-full">News</a>
+			<a href="/news" class="inline-block bg-orange-200 px-4 py-2 rounded-full">Events</a>
 		</li>
 		<li>
-			<a href="/lunch" class="bg-teal-200 px-4 py-2 rounded-full">Lunch</a>
+			<a href="/lunch" class="inline-block bg-teal-200 px-4 py-2 rounded-full">Lunch</a>
 		</li>
 		<li>
-			<a href="https://wiki.dtek.se" class="bg-purple-200 px-4 py-2 rounded-full">Wiki</a>
+			<a href="https://wiki.dtek.se" class="inline-block bg-purple-200 px-4 py-2 rounded-full"
+				>Wiki</a
+			>
 		</li>
 		<li>
-			<a href="/about" class="bg-indigo-200 px-4 py-2 rounded-full whitespace-nowrap">Om oss</a>
+			<a href="/about" class="inline-block bg-indigo-200 px-4 py-2 rounded-full whitespace-nowrap"
+				>About</a
+			>
 		</li>
 	</ul>
 </nav>

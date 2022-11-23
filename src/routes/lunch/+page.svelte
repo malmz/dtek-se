@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Card from '$lib/components/Card.svelte';
 	import Lunch from '$lib/components/Lunch.svelte';
 	import Section from '$lib/components/Section.svelte';
 	import type { PageData } from './$types';
@@ -11,14 +12,12 @@
 	<meta name="description" content="Dagens lunch meny" />
 </svelte:head>
 
-<a href="/">← Home</a>
-
 <Section title="Dagens lunch">
 	<div class="flex flex-col gap-6">
 		{#each data.menus as menu}
-			<a href={`/lunch/${menu.id}`} class="p-3 bg-orange-100 rounded-lg">
+			<Card>
 				<Lunch {menu} />
-			</a>
+			</Card>
 		{:else}
 			<span>Kunde inte hämta lunchmenyn.</span>
 		{/each}

@@ -23,14 +23,14 @@
 	aria-valuemax={5}
 	aria-valuenow={value}
 	aria-label={label}
-	class="w-56"
+	class="w-56 flex items-center gap-2"
 >
 	<div
 		style:width="{(cappedVal / 5) * 100}%"
-		class="h-1 rounded-full inline-block align-middle {color}"
+		class="h-1 rounded-full align-middle {color}"
 		style:background-color={color}
 	/>
-	<span class="text-xs font-semibold text-gray-600 ml-2"
+	<span class="block text-xs font-semibold text-gray-600 shrink-0"
 		>{cappedVal.toFixed(2)} <span class="font-mono">CO<sub>2</sub></span></span
 	>
 </div>
