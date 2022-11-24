@@ -15,17 +15,17 @@ ADD . ./
 RUN pnpm install --offline
 
 RUN pnpm run build
+RUN pnpm prune --prod
 
-FROM deps
+FROM node:18-alpine
 WORKDIR /app
 EXPOSE 3000
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0
 ENV PORT=3000
 
+COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/build ./build
 COPY --from=builder /app/package.json ./
-
-RUN pnpm install --offline --dev
 
 CMD ["node", "build"]
