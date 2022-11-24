@@ -9,6 +9,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.42.0
   '@typescript-eslint/parser': ^5.42.0
   autoprefixer: ^10.4.13
+  daisyui: ^2.42.0
   date-fns: ^2.29.3
   eslint: ^8.26.0
   eslint-config-prettier: ^8.5.0
@@ -39,6 +40,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.42.0_6xw5wg2354iw4zujk2f3vyfrzu
   '@typescript-eslint/parser': 5.42.0_wyqvi574yv7oiwfeinomdzmc3m
   autoprefixer: 10.4.13_postcss@8.4.18
+  daisyui: 2.42.0_lycaqaeny3mp632atgvyvqdgwe
   eslint: 8.26.0
   eslint-config-prettier: 8.5.0_eslint@8.26.0
   eslint-plugin-svelte3: 4.0.0_l6ppk7eerpslmlsqymzic46t24
@@ -644,10 +646,33 @@ packages:
       which: 2.0.2
     dev: true
 
+  /css-selector-tokenizer/0.8.0:
+    resolution: {integrity: sha512-Jd6Ig3/pe62/qe5SBPTN8h8LeUg/pT4lLgtavPf7updwwHpvFzxvOQBHYj2LZDMjUnBzgvIUSjRcf6oT5HzHFg==}
+    dependencies:
+      cssesc: 3.0.0
+      fastparse: 1.1.2
+    dev: true
+
   /cssesc/3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
     hasBin: true
+    dev: true
+
+  /daisyui/2.42.0_lycaqaeny3mp632atgvyvqdgwe:
+    resolution: {integrity: sha512-OCrpiKKzgLeWbEC8qykewAGKYTeRbnzdsKOICOwUlz/1eFz/2spgeNm62fDY5P9SsXKARTkAgf/J2NOA+1wngQ==}
+    peerDependencies:
+      autoprefixer: ^10.0.2
+      postcss: ^8.1.6
+    dependencies:
+      autoprefixer: 10.4.13_postcss@8.4.18
+      color: 4.2.3
+      css-selector-tokenizer: 0.8.0
+      postcss: 8.4.18
+      postcss-js: 4.0.0_postcss@8.4.18
+      tailwindcss: 3.2.2_postcss@8.4.18
+    transitivePeerDependencies:
+      - ts-node
     dev: true
 
   /date-fns/2.29.3:
@@ -1143,6 +1168,10 @@ packages:
 
   /fast-levenshtein/2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
+    dev: true
+
+  /fastparse/1.1.2:
+    resolution: {integrity: sha512-483XLLxTVIwWK3QTrMGRqUfUpoOs/0hbQrl2oz4J0pAcm3A3bu84wxTFqGqkJzewCLdME38xJLJAxBABfQT8sQ==}
     dev: true
 
   /fastq/1.13.0:
