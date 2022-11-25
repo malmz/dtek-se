@@ -1,3 +1,0 @@
-.divider {
-	@apply flex items-center before:flex-grow before:h-0.5 before:bg-gray-300 after:flex-grow after:h-0.5 after:bg-gray-300 my-4 gap-4 empty:gap-0;
-}

@@ -1,6 +1,5 @@
 <script lang="ts">
 	export let value: number;
-	export let label: string = '';
 
 	$: cappedVal = Math.min(5, Math.max(0, value));
 
@@ -17,20 +16,22 @@
 	$: color = mapColors(cappedVal);
 </script>
 
-<div
-	role="progressbar"
-	aria-valuemin={0}
-	aria-valuemax={5}
-	aria-valuenow={value}
-	aria-label={label}
-	class="w-56 flex items-center gap-2"
->
+{#if value}
 	<div
-		style:width="{(cappedVal / 5) * 100}%"
-		class="h-1 rounded-full align-middle {color}"
-		style:background-color={color}
-	/>
-	<span class="block text-xs font-semibold text-gray-600 shrink-0"
-		>{cappedVal.toFixed(2)} <span class="font-mono">CO<sub>2</sub></span></span
+		role="progressbar"
+		aria-valuemin={0}
+		aria-valuemax={5}
+		aria-valuenow={value}
+		aria-label="CO2 utsläpp"
+		class="flex items-center gap-2"
 	>
-</div>
+		<div
+			style:width="{(cappedVal / 5) * 100}%"
+			class="h-1 rounded-full align-middle {color}"
+			style:background-color={color}
+		/>
+		<span class="block text-xs font-semibold text-base-content shrink-0"
+			>{cappedVal.toFixed(2)} <span class="font-mono">CO<sub>2</sub></span></span
+		>
+	</div>
+{/if}

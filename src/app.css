@@ -1,15 +1,8 @@
 /* Write your global styles here, in PostCSS syntax */
 
-@import "inter-ui/inter.css";
-
-@import './lib/styles/forms.css';
-@import './lib/styles/button.css';
-@import './lib/styles/misc.css';
-
+@import 'inter-ui/inter.css';
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
 
 @layer base {

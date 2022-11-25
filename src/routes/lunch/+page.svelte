@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Card from '$lib/components/Card.svelte';
-	import Lunch from '$lib/components/Lunch.svelte';
+	import Lunch from '$lib/components/lunch/Lunch.svelte';
 	import Section from '$lib/components/Section.svelte';
 	import type { PageData } from './$types';
 
@@ -12,12 +12,15 @@
 	<meta name="description" content="Dagens lunch meny" />
 </svelte:head>
 
-<Section title="Dagens lunch">
-	<div class="flex flex-col gap-6">
+<Section prose>
+	<h1>Dagens lunch</h1>
+	<p>Hitta dagens lunch för olika restauranger runt på campus</p>
+
+	<div class="divide-y-4 not-prose">
 		{#each data.menus as menu}
-			<Card>
-				<Lunch {menu} />
-			</Card>
+			<div class="py-4">
+				<Lunch {menu} link />
+			</div>
 		{:else}
 			<span>Kunde inte hämta lunchmenyn.</span>
 		{/each}

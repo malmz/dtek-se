@@ -1,20 +1,20 @@
+<script lang="ts">
+	import NavLink from './NavLink.svelte';
+</script>
+
 <nav>
-	<ul class="flex gap-2 sm:gap-4">
+	<ul class="menu menu-compact sm:menu-normal menu-horizontal px-2">
 		<li>
-			<a href="/news" class="inline-block bg-orange-200 px-4 py-2 rounded-full">Events</a>
+			<NavLink href="/news" class="">Events</NavLink>
 		</li>
 		<li>
-			<a href="/lunch" class="inline-block bg-teal-200 px-4 py-2 rounded-full">Lunch</a>
+			<NavLink href="/lunch" class="">Lunch</NavLink>
 		</li>
 		<li>
-			<a href="https://wiki.dtek.se" class="inline-block bg-purple-200 px-4 py-2 rounded-full"
-				>Wiki</a
-			>
+			<NavLink href="https://wiki.dtek.se" class="">Wiki</NavLink>
 		</li>
 		<li>
-			<a href="/about" class="inline-block bg-indigo-200 px-4 py-2 rounded-full whitespace-nowrap"
-				>About</a
-			>
+			<NavLink href="/about" class="">About</NavLink>
 		</li>
 	</ul>
 </nav>
