@@ -1,38 +1,26 @@
-# Dtek.se
+# Datas fina nya hemsida
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+[![dhack banner](https://static.codegrotto.com/images/dhack-banner.svg)](dhack.se)
 
-## Creating a project
+## Bakgrund
 
-If you're seeing this, you've probably already done this step. Congrats!
+För länge sedan på en hörsalsväg långt långt borta, på ett extra tråkigt sektionsmöte så fick Cral en ide! "Fy va ful våran hemsida e! Lite webdev har aldrig skadat någon", sa en naiv Cral. Efter mycket möda och gott besvär så har vi en marginellt bättre hemsida. (Tetris säljes separat)
 
-```bash
-# create a new project in the current directory
-npm init svelte
+## Development
 
-# create a new project in my-app
-npm init svelte my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Klona repot och installera dependencies med `pnpm install`
 
 ```bash
-npm run dev
+# Clone the repo
+git clone git@github.com:Malmz/dtek-se.git
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+# Install dependencies
+pnpm install
+
+# Start the dev server
+pnpm run dev
 ```
 
-## Building
+## Release
 
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Github actions bygger automatisk en docker image vid varje push till main. För att skapa en ny version, skapa en ny tag med formatet `vX.Y.Z`.
