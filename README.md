@@ -23,4 +23,4 @@ pnpm run dev
 
 ## Release
 
-Github actions bygger automatisk en docker image vid varje push till main. För att skapa en ny version, skapa en ny tag med formatet `vX.Y.Z`.
+Github actions bygger automatisk en docker image när en tag skapas med formatet `vX.Y.Z`.
