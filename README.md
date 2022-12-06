@@ -2,7 +2,7 @@
 
 [![dhack banner](https://static.codegrotto.com/images/dhack-banner.svg)](dhack.se)
 
-## Bakgrund
+## Background
 
 För länge sedan på en hörsalsväg långt långt borta, på ett extra tråkigt sektionsmöte så fick Cral en ide! "Fy va ful våran hemsida e! Lite webdev har aldrig skadat någon", sa en naiv Cral. Efter mycket möda och gott besvär så har vi en marginellt bättre hemsida. (Tetris säljes separat)
 
