@@ -16,7 +16,7 @@ const config = {
 		}),
 		mdsvex({
 			extensions: ['.md'],
-			layout: new URL('src/lib/layouts/Default.svelte', import.meta.url).pathname
+			layout: 'src/lib/layouts/Default.svelte'
 		})
 	],
 
