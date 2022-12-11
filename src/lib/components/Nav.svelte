@@ -12,7 +12,7 @@
 		</li>
 		<li>
 			<a href="https://wiki.dtek.se" target="_blank" rel="noreferrer"
-				>Wiki <svg
+				>Wiki<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="h-5 w-5 feather feather-external-link"
 					viewBox="0 0 24 24"
