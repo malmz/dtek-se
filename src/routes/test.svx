@@ -1,4 +1,7 @@
-<script>import Title from './Title.svelte'; import Section from '$lib/Section.svelte';</script>
+<script>
+	import Title from './Title.svelte'; 
+	import Section from '$lib/components/Section.svelte';
+</script>
 
 <Title />
 
