@@ -13,7 +13,12 @@
 </script>
 
 <div>
-	<h3 class="text-xl font-bold text-base-content mb-2">{menu.name}</h3>
+	<div class="flex gap-8 mt-4">
+		<h3 class="text-xl font-bold text-base-content mb-2">{menu.name}</h3>
+		{#if link}
+			<a href="/lunch/{menu.resturant}" class="btn btn-sm btn-secondary">Läs mer</a>
+		{/if}
+	</div>
 
 	<div>
 		{#each menu.items as item}
@@ -38,12 +43,5 @@
 		{:else}
 			<p>Ingen lunch idag</p>
 		{/each}
-	</div>
-
-	<div class="flex justify-between items-center mt-4">
-		<span class="text-sm text-gray-700">Fetched {relativeFormat} ago</span>
-		{#if link}
-			<a href="/lunch/{menu.resturant}" class="btn btn-sm btn-secondary">Läs mer</a>
-		{/if}
 	</div>
 </div>

@@ -1,7 +1,11 @@
 <script lang="ts">
-	import Section from '$lib/components/Section.svelte';
+	export let title = '';
+	export let description = '';
 </script>
 
-<Section prose>
-	<slot />
-</Section>
+<svelte:head>
+	<title>{title}</title>
+	<meta name="description" content={description} />
+</svelte:head>
+
+<slot />

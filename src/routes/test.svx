@@ -1,0 +1,9 @@
+<script>import Title from './Title.svelte'; import Section from '$lib/Section.svelte';</script>
+
+<Title />
+
+Det här är Dtek-portalen som innehåller användbara länkar och information om studentlivet på Chalmers. Här kan du läsa om kommande evenemang, ta reda på vad som finns till lunch och mycket mer.
+
+Datateknologssektionen är en ideell organisation vars uppdrag är att förbättra studentlivet för
+alla studenter på datavetenskaps- och ingenjörsprogrammet. Vi anordnar mottagningen för nya
+studenter, håller i fester, ger studentfeedback till Chalmers och mycket mer.

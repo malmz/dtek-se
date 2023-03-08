@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /// <reference types="@sveltejs/kit" />
 
 // See https://kit.svelte.dev/docs/types#app
@@ -8,4 +9,13 @@ declare namespace App {
 	// interface Platform {}
 	// interface Session {}
 	// interface Stuff {}
+}
+
+declare module '*.svx' {
+	import type { SvelteComponentDev } from 'svelte/internal';
+
+	export default class Comp extends SvelteComponentDev {
+		$$prop_def: Record<string, never>;
+	}
+	export const metadata: Record<string, any>;
 }
